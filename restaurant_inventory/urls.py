@@ -20,6 +20,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('inventory.urls')),
-    path('api/token-auth/', obtain_auth_token, name='api_token_auth'), #Token Endpoint
+    path("", include("inventory.urls")),
+    #path('api/', include('inventory.urls')),
+    #path('api/token-auth/', obtain_auth_token, name='api_token_auth'), #Token Endpoint
 ]

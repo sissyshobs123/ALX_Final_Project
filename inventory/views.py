@@ -1,4 +1,5 @@
-from rest_framework import generics, status
+from rest_framework import generics, status, filters
+from django_filters.rest_framework import DjangoFilterBackend 
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
@@ -56,6 +57,13 @@ class UpdatePriceView(APIView):
 class ListItemsView(generics.ListAPIView):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    
+    # filter by exact fields
+    filterset_fields = ['category', 'price']
+    
+    # search across fields (partial match)
+    search_fields = ['name']
 
 class ItemDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Item.objects.all()

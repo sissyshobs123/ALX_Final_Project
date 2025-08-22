@@ -57,13 +57,15 @@ class UpdatePriceView(APIView):
 class ListItemsView(generics.ListAPIView):
     queryset = Item.objects.all()
     serializer_class = ItemSerializer
-    filter_backends = [DjangoFilterBackend, filters.SearchFilter]
+    filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter,]
     
     # filter by exact fields
     filterset_fields = ['category', 'price']
     
     # search across fields (partial match)
     search_fields = ['name']
+    ordering_fields = ['name', 'price', 'created_at']  # allowed ordering fields
+    ordering = ['name']  # default ordering
 
 class ItemDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Item.objects.all()

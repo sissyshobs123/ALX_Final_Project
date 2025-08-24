@@ -1,52 +1,94 @@
-# ALX Final Project - Inventory Management API
+ALX Final Project – Inventory Management API
+Overview
 
-## 📌 Project Overview
-This project is an **Inventory Management REST API** built with Django REST Framework.  
-It allows users to **add, update, remove, view, and search items** in an inventory system.  
-The API is designed to be simple, scalable, and secure, serving as a foundation for a real-world inventory management solution.
+The Inventory Management API is a RESTful backend system built with Django REST Framework (DRF).
+It enables users to add, update, delete, search, and manage inventory items with ease.
+This project demonstrates strong backend development skills, API design, and test-driven development.
 
----
+Features
 
-## 🚀 Features
-- Add new items to inventory ✅  
-- Update item details (e.g., price, quantity)  
-- Remove items from inventory  
-- View all items in the inventory  
-- Search and filter items by different fields  
-- API tested with unit tests for reliability  
+Add new inventory items
+Update item details (price, quantity, etc.)
+Delete items from inventory
+View all inventory items
+Search and filter items by fields
+Unit-tested endpoints for reliability
 
----
+Tech Stack
 
-## 🛠️ Tech Stack
-- **Python 3**  
-- **Django**  
-- **Django REST Framework (DRF)**  
-- **SQLite** (default, can be swapped for PostgreSQL/MySQL)  
-- **Git & GitHub** for version control  
+Programming Language: Python 3.x
 
----
+Framework: Django, Django REST Framework
 
-## 📂 Project Structure
+Database: SQLite (default, easy swap to PostgreSQL/MySQL)
 
+Version Control: Git & GitHub
+
+Testing: Django’s built-in test framework
+
+Project Structure
 ALX_Final_Project/
-│── inventory/ # Main app
-│── ALX_Final_Project/ # Project settings
-│── manage.py
-│── requirements.txt
-│── README.md
+│── inventory/            # Main app  
+│── restaurant_inventory/    # Project settings  
+│── manage.py  
+│── requirements.txt  
+│── README.md  
 
-Setup Instruction 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/sissyshobs123/ALX_Final_Project.git
-   cd ALX_Final_Project
-2. Create & activate a virtual environment:   
-   python -m venv venv
-source venv/bin/activate   # macOS/Linux
-venv\Scripts\activate      # Windows
-3. Install dependencies:
+Setup Instructions
+
+Clone the repository
+
+git clone https://github.com/sissyshobs123/ALX_Final_Project.git
+cd ALX_Final_Project
+
+
+Create and activate a virtual environment
+
+python -m venv venv
+# macOS/Linux
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
+
+
+Install dependencies
+
 pip install -r requirements.txt
-4. Run migrations:
+
+
+Run database migrations
+
 python manage.py migrate
-5. Start the server:
+
+
+Start the development server
+
 python manage.py runserver
+
+Running Tests
+
+Run unit tests to ensure all endpoints work correctly:
+
+python manage.py test
+
+API Endpoints (Sample)
+Method	Endpoint	Description
+GET	/api/items/	List all items
+POST	/api/items/	Create a new item
+GET	/api/items/<id>/	Retrieve item details
+PUT	/api/items/<id>/	Update an item
+DELETE	/api/items/<id>/	Delete an item
+
+Contribution
+
+Contributions are welcome!
+
+Fork the repository
+
+Create a feature branch
+
+Submit a pull request
+
+License
+
+This project is licensed under the MIT License.

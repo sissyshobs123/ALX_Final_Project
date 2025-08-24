@@ -5,9 +5,10 @@ from .views import (
 )
 
 urlpatterns = [
-    path("categories/", CategoryListCreateView.as_view(), name="category-list-create"),
-    path("items/", ItemListCreateView.as_view(), name="item-list-create"),
-    path("items/<int:pk>/", ItemDetailView.as_view(), name="item-detail"),  # 👈 NEW
+    path("categories/", CategoryListCreateView.as_view(), name="category-list"),
+    path("items/", ItemListCreateView.as_view(), name="item-list"),
+    path("items/<int:pk>/", ItemDetailView.as_view(), name="item-detail"),
     path("items/<int:pk>/update-price/", UpdatePriceView.as_view(), name="update-price"),
-    path("items/list/", ListItemsView.as_view(), name="list-items"),
+    path("items/list/", ListItemsView.as_view(), name="item-list-filter"),
 ]
+

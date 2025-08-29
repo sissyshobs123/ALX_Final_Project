@@ -60,7 +60,7 @@ class ListItemsView(generics.ListAPIView):
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter,]
     
     # filter by exact fields
-    filterset_fields = ['category', 'price']
+    filterset_fields = ['category']
     
     # search across fields (partial match)
     search_fields = ['name']

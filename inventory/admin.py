@@ -6,6 +6,7 @@ from .models import Item, Category
 class ItemAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "category", "price", "date_added")
     search_fields = ("name", "category__name")
+    list_display_links = ('name',) 
     list_filter = ("category",)
     ordering = ("price",)
 
@@ -13,4 +14,5 @@ class ItemAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ("id", "name")
+    list_display_links =('name',)
     search_fields = ("name",)
